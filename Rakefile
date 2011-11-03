@@ -9,6 +9,7 @@ Echoe.new('cld', '0.2.0') do |p|
   p.author          = "Jason Toy"
   p.email           = "jtoy@jtoy.net"
   p.ignore_pattern  = ["tmp/*", "script/*"]
+  p.runtime_dependencies = ["ffi"]
   p.development_dependencies = []
 end
 
