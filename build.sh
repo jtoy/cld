@@ -41,7 +41,7 @@ $AR rcs libcld.a *.o
 
 echo
 #$CC -DCLD_WINDOWS -I. -L. -o example example.cc -lcld -lstdc++
-$CC -DCLD_WINDOWS -I. -L. -o cld.so -lcld -lstdc++ *.o
+$CC -DCLD_WINDOWS -I. -L. -o cld.so -lstdc++ *.o
 
 
 echo
