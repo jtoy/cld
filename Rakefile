@@ -3,7 +3,7 @@ require 'rubygems'
 require 'rake'
 require 'echoe'
 
-Echoe.new('cld', '0.1.0') do |p|
+Echoe.new('cld', '0.2.0') do |p|
   p.description     = "Compact Language Detection from chrome"
   p.url             = "http://github.com/jtoy/cld"
   p.author          = "Jason Toy"
