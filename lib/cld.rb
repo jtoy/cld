@@ -1,12 +1,21 @@
-require "rubygems"
+require "cld/version"
 require "ffi"
 
 module CLD
   extend FFI::Library
-  dir = File.expand_path(File.join(File.dirname(__FILE__), "../ext/cld"))
-  ffi_lib "#{dir}/cld.so"
-  attach_function "detect_language","detectLanguageThunkInt", [:buffer_in], :int
-  def self.english?(text)
-    detect_language(text) == 0
+
+  def self.detect_language(text)
+    result = detect_language_ext(text)
+    Hash[ result.members.map {|member| [member.to_sym, result[member]]} ]
   end
+
+  private
+
+  class ReturnValue < FFI::Struct
+    layout :name, :string, :code, :string, :reliable, :bool
+  end
+
+  GEM_ROOT = File.expand_path("../../", __FILE__)
+  ffi_lib "#{GEM_ROOT}/ext/cld/cld.so"
+  attach_function "detect_language_ext","detectLanguageThunkInt", [:buffer_in], ReturnValue.by_value
 end
