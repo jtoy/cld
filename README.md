@@ -1,6 +1,6 @@
 # Compact Language Detection
 
-Blazing-fast langauge detection for Ruby provided by
+Blazing-fast language detection for Ruby provided by
 Google Chrome's Compact Language Detector.
 
 ## How to Use
@@ -30,3 +30,5 @@ $ bundle
 ## Thanks
 
 Thanks to the Chrome authors, and to Mike McCandless for writing a Python version.
+
+Licensed the same as Chrome.  Jason Toy

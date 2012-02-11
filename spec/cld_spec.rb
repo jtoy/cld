@@ -18,6 +18,20 @@ describe CLD do
     it { subject[:code].should eq("fr") }
     it { subject[:reliable].should be_true }
   end
+  
+  context "Simplified Chinese text" do
+    subject { CLD.detect_language("你好吗箭体") }
+
+    it { subject[:name].should eq("Chinese") } 
+    it { subject[:code].should eq("zh") }
+  end
+  
+  context "Traditional Chinese text" do
+    subject { CLD.detect_language("你好嗎繁體") }
+
+    it { subject[:name].should eq("ChineseT") } 
+    it { subject[:code].should eq("zh-TW") }
+  end
 
   context "Unknown text" do
     subject { CLD.detect_language("") }
