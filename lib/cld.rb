@@ -5,7 +5,7 @@ module CLD
   extend FFI::Library
 
   def self.detect_language(text)
-    result = detect_language_ext(text)
+    result = detect_language_ext(text.to_s)
     Hash[ result.members.map {|member| [member.to_sym, result[member]]} ]
   end
 
