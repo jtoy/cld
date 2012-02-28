@@ -41,4 +41,12 @@ describe CLD do
     it { subject[:reliable].should be_true }
   end
 
+  context "nil for text" do
+    subject { CLD.detect_language(nil) }
+
+    it { subject[:name].should eq("Unknown") }
+    it { subject[:code].should eq("un") }
+    it { subject[:reliable].should be_true }
+  end
+
 end
