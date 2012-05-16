@@ -4,8 +4,8 @@ require "ffi"
 module CLD
   extend FFI::Library
 
-  def self.detect_language(text)
-    result = detect_language_ext(text.to_s)
+  def self.detect_language(text, is_plain_text=true)
+    result = detect_language_ext(text.to_s, is_plain_text)
     Hash[ result.members.map {|member| [member.to_sym, result[member]]} ]
   end
 
@@ -17,5 +17,5 @@ module CLD
 
   GEM_ROOT = File.expand_path("../../", __FILE__)
   ffi_lib "#{GEM_ROOT}/ext/cld/cld.so"
-  attach_function "detect_language_ext","detectLanguageThunkInt", [:buffer_in], ReturnValue.by_value
+  attach_function "detect_language_ext","detectLanguageThunkInt", [:buffer_in, :bool], ReturnValue.by_value
 end
