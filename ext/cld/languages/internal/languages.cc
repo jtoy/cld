@@ -58,8 +58,7 @@ static const LanguageInfo kLanguageInfoTable[] = {
   { "IRISH",               "ga", "gle", NULL},
   { "GALICIAN",            "gl", "glg", NULL},
   // Impossible to tell Tagalog from Filipino at the moment.
-  // Use ISO 639-2 code for Filipino here.
-  { "TAGALOG",             NULL, "fil", NULL},
+  { "TAGALOG",             "tl", "tgl", NULL},
   { "TURKISH",             "tr", "tur", NULL},
   { "UKRAINIAN",           "uk", "ukr", NULL},
   { "HINDI",               "hi", "hin", NULL},
