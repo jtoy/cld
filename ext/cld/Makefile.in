@@ -1,7 +1,8 @@
-CFLAGS=-fPIC -I. -O2 -DCLD_WINDOWS
-LDFLAGS=-L.
-CC=g++
-AR=ar
+CXX = @CXX@
+CPPFLAGS = @CLDCPPFLAGS@
+CXXFLAGS = @CLDCXXFLAGS@
+LDFLAGS = @CLDLDFLAGS@
+
 SOURCES=encodings/compact_lang_det/cldutil.cc \
 				encodings/compact_lang_det/cldutil_dbg_empty.cc \
 				encodings/compact_lang_det/compact_lang_det.cc \
@@ -24,8 +25,8 @@ SOURCES=encodings/compact_lang_det/cldutil.cc \
 				thunk.cc
 
 install:
-		rm -f *.o
-		rm -f libcld.a
-		$(CC) -c $(CFLAGS) $(SOURCES)
-		$(AR) rcs libcld.a *.o
-		$(CC) -DCLD_WINDOWS -I. -L. -shared -o cld.so -lstdc++ *.o
+	rm -f *.o
+	rm -f libcld.a
+	$(CXX) -c $(CPPFLAGS) $(CXXFLAGS) $(SOURCES)
+	ar rcs libcld.a *.o
+	$(CXX) $(CPPFLAGS) $(LDFLAGS) -o cld.so *.o
