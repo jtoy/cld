@@ -1,0 +1,17 @@
+AC_INIT(cld, 0.6.0)
+
+# Check for a C++ compiler
+AC_PROG_CXX
+
+CLDCPPFLAGS="-I. -DCLD_WINDOWS"
+CLDCXXFLAGS="-fPIC -O2"
+CLDLDFLAGS="-L. -shared -lstdc++"
+
+# Export variables
+AC_SUBST(CLDCPPFLAGS)
+AC_SUBST(CLDCXXFLAGS)
+AC_SUBST(CLDLDFLAGS)
+
+AC_CHECK_LIB(stdc++, main)
+
+AC_OUTPUT(Makefile)
