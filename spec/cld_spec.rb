@@ -45,7 +45,7 @@ describe CLD do
     subject { CLD.detect_language("你好嗎繁體") }
 
     it { subject[:name].should eq("ChineseT") } 
-    it { subject[:code].should eq("zh-TW") }
+    it { subject[:code].should eq("zh-Hant") }
   end
 
   context "Unknown text" do
@@ -53,7 +53,7 @@ describe CLD do
 
     it { subject[:name].should eq("Unknown") }
     it { subject[:code].should eq("un") }
-    it { subject[:reliable].should be_true }
+    it { subject[:reliable].should be_false }
   end
 
   context "nil for text" do
@@ -61,7 +61,7 @@ describe CLD do
 
     it { subject[:name].should eq("Unknown") }
     it { subject[:code].should eq("un") }
-    it { subject[:reliable].should be_true }
+    it { subject[:reliable].should be_false }
   end
 
 end

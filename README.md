@@ -1,11 +1,13 @@
 # Compact Language Detection
 
 Blazing-fast language detection for Ruby provided by
-Google Chrome's Compact Language Detector.
+Google Chrome's [Compact Language Detection 2](https://code.google.com/p/cld2/).
 
 ## How to Use
 
 ```ruby
+require 'cld'
+
 CLD.detect_language("This is a test")
 # => {:name => "ENGLISH", :code => "en", :reliable => true}
 

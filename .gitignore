@@ -1,5 +1,7 @@
 *.gem
+*.o
 *.rbc
+*.so
 .bundle
 .config
 .svn
@@ -16,6 +18,5 @@ spec/reports
 test/tmp
 test/version_tmp
 tmp
-ext/cld/*.o
-ext/cld/*.a
-ext/cld/*.so
+ext/cld/Makefile
+ext/cld/mkmf.log
