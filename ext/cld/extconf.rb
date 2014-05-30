@@ -11,3 +11,8 @@ $srcs = cld2_files.map { |name| File.join('internal', name) } + %w(thunk.cc)
 $objs = $srcs.map { |name| name.sub(/[.].*$/, ".#{$OBJEXT}") }
 
 create_makefile('cld/cld2')
+
+IO.write('Makefile', <<-EOF, :mode => 'a')
+CLEANOBJS := $(CLEANOBJS) #{File.join('internal', "*.#{$OBJEXT}")}
+#{IO.readlines('Makefile').find { |line| /^install:/ === line }.chomp} distclean
+EOF

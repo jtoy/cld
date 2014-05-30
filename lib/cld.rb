@@ -16,6 +16,6 @@ module CLD
   end
 
   GEM_ROOT = File.expand_path("../../", __FILE__)
-  ffi_lib "#{GEM_ROOT}/ext/cld/cld2.so"
+  ffi_lib "#{GEM_ROOT}/lib/cld/cld2.so"
   attach_function "detect_language_ext","detectLanguageThunkInt", [:buffer_in, :bool], ReturnValue.by_value
 end
