@@ -2,7 +2,7 @@ require 'mkmf'
 
 have_library('stdc++') or abort
 
-cld2_files = IO.readlines('internal/compile_libs.sh').
+cld2_files = IO.readlines(File.join(File.dirname(__FILE__), 'internal', 'compile_libs.sh')).
   take_while { |line| !line.include?('libcld2.so') }.reverse.
   take_while { |line| !line.include?('g++') }.
   flat_map { |line| line.split(' ') } - %w(\\)
