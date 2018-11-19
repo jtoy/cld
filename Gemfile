@@ -5,3 +5,4 @@ gemspec
 
 gem "rake"
 gem "rspec"
+gem "bump"
