@@ -18,3 +18,7 @@ tmp
 ext/cld/*.o
 ext/cld/*.a
 ext/cld/*.so
+ext/cld/.deps/
+ext/cld/Makefile
+ext/cld/config.status
+ext/cld/libtool
