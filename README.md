@@ -27,6 +27,10 @@ And then execute:
 $ bundle
 ```
 
+## Development
+
+- [install CLD](https://github.com/mzsanford/cld#installing)
+
 ## Thanks
 
 Thanks to the Chrome authors, and to Mike McCandless for writing a Python version.
