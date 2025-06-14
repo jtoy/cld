@@ -6,30 +6,24 @@ Google Chrome's Compact Language Detector.
 ## How to Use
 
 ```ruby
+require 'cld'
+
 CLD.detect_language("This is a test")
-# => {:name => "ENGLISH", :code => "en", :reliable => true}
+# => {name: "ENGLISH", code: "en", reliable: true}
 
 CLD.detect_language("plus ça change, plus c'est la même chose")
-# => {:name => "FRENCH", :code => "fr", :reliable => true}
+# => {name: "FRENCH", code: "fr", reliable: true}
 ```
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
-```ruby
-gem "cld"
-```
-
-And then execute:
-
-```sh
-$ bundle
+```bash
+gem install cld
 ```
 
 ## Development
 
-- [install CLD](https://github.com/mzsanford/cld#installing)
+- [install C++ CLD](https://github.com/mzsanford/cld#installing)
 
 ## Thanks
 
